@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=95944f8f-52d5-4533-bf96-73d6798c2ac6"> </script>
+    <title>Sportylife</title>
+</head>
+<body class="">
+    <nav class="flex justify-between w-full items-center bg-black">
+        <header class="h-20 text-white">
+          <nav class="relative px-2 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <img src="https://sportylife.in/public/web/assets/img/logo-updated3.png" class="h-20" alt="logo">
+                <ul class="hidden md:flex space-x-6">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">News</a></li>
+                  <li class="flex relative group">
+                    <a href="#" class="mr-1">Services</a> 
+                    <i class="fa-solid fa-chevron-down fa-2xs pt-3"></i>
+                    <!-- Submenu starts -->
+                    <ul class="absolute bg-white p-3 w-52 top-6 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out origin-top shadow-lg">
+                      <li class="text-sm hover:bg-slate-100 leading-8"><a href="#">Webdesign</a></li>
+                      <li class="text-sm hover:bg-slate-100 leading-8"><a href="#">Digital marketing</a></li>
+                      <li class="text-sm hover:bg-slate-100 leading-8"><a href="#">SEO</a></li>
+                      <li class="text-sm hover:bg-slate-100 leading-8"><a href="#">Ad campaigns</a></li>
+                      <li class="text-sm hover:bg-slate-100 leading-8"><a href="#">UX Design</a></li>
+                    </ul>
+                    <!-- Submenu ends -->
+                  </li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+      
+                <a href="#" class="bg-red-400 px-5 py-1 rounded-3xl hover:bg-red-500 text-white hidden md:flex" role="button">Sign In</a>
+              
+              <!-- Mobile menu icon -->
+              <button id="mobile-icon" class="md:hidden">
+                <i onclick="changeIcon(this)" class="fa-solid fa-bars"></i>
+              </button>
+              
+              </div>
+            
+            <!-- Mobile menu -->
+            <div class="md:hidden flex justify-center mt-3 w-full">
+              <div id="mobile-menu" class="mobile-menu absolute top-23 w-full"> <!-- add hidden here later -->
+                <ul class="bg-gray-100 shadow-lg leading-9 font-bold h-screen">
+                  <li class="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4"><a href="https://google.com" class="block pl-7">Home</a></li>
+                  <li class="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4"><a href="#" class="block pl-7">News</a></li>
+                  <li class="border-b-2 border-white hover:bg-red-400 hover:text-white">
+                    <a href="#" class="block pl-11">Services <i class="fa-solid fa-chevron-down fa-2xs pt-4"></i></a> 
+                    
+                    <!-- Submenu starts -->
+                    <ul class="bg-white text-gray-800 w-full">
+                      <li class="text-sm leading-8 font-normal hover:bg-slate-200"><a class="block pl-16" href="#">Webdesign</a></li>
+                      <li class="text-sm leading-8 font-normal hover:bg-slate-200"><a class="block pl-16" href="#">Digital marketing</a></li>
+                      <li class="text-sm leading-8 font-normal hover:bg-slate-200"><a class="block pl-16" href="#">SEO</a></li>
+                      <li class="text-sm leading-8 font-normal hover:bg-slate-200"><a class="block pl-16" href="#">Ad campaigns</a></li>
+                      <li class="text-sm leading-8 font-normal hover:bg-slate-200"><a class="block pl-16" href="#">UX Design</a></li>
+                    </ul>
+                    <!-- Submenu ends -->
+                  </li>
+                  <li class="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4"><a href="#" class="block pl-7">About</a></li>
+                  <li class="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4"><a href="#" class="block pl-7">Contact</a></li>
+                </ul>
+                </div>
+            </div>
+      
+          </nav>
+        </header>
+        
+        <!-- Hero section starts -->
+        
+        
+    </nav>
+</body>
+</html>
