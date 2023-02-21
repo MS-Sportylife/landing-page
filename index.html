@@ -5,14 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="game, fitness">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- <script defer src="/vendor/js/splider.js"></script> -->
-  <!-- <link rel="stylesheet" href="/vendor/css/splider.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- <script id="ze-snippet"
-    src="https://static.zdassets.com/ekr/snippet.js?key=95944f8f-52d5-4533-bf96-73d6798c2ac6"> </script> -->
   <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,23 +58,29 @@
   .scroll::-webkit-scrollbar {
     display: none;
   }
+
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
 </style>
 
 <body class="bg-[#111213]">
   <!-- navbar -->
-  <nav class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0">
+  <nav class="sm:px-4 fixed w-full z-20 top-0 left-0">
     <div class="flex flex-wrap items-center h-[70px] justify-around glass mx-auto">
       <a href="/" class="flex items-center">
-        <img src="https://sportylife.in/public/web/assets/img/logo-updated3.png" class="h-10" alt="Sportylife Logo">
+        <img src="https://sportylife.in/public/web/assets/img/logo-updated3.png" class="h-14" alt="Sportylife Logo">
       </a>
       <div class="flex md:order-2">
-        <a href="https://sportylife.in/login">
+        <a href="/login">
           <button type="button"
-            class="text-white w-28 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-4 text-center mr-3 md:mr-0">
+            class="text-white w-28 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-4 text-center mr-3 md:mr-0 uppercase font-bold text-md">
             Login</button>
         </a>
-        <button data-collapse-toggle="navbar-sticky" onclick="handleHide()" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200
-          " aria-controls="navbar-sticky" aria-expanded="false">
+        <button data-collapse-toggle="navbar-sticky" onclick="handleHide()" type="button"
+          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
@@ -87,14 +90,11 @@
           </svg>
         </button>
       </div>
-      <div id="menu" class="items-center justify-between hidden mt-3 rounded-md bg-[#333536] h-[210px] w-full md:flex md:w-auto md:order-1
-      xl:bg-transparent xl:h-auto xl:mt-0
-      md:bg-transparent md:h-auto md:mt-0
-      lg:bg-transparent lg:h-auto lg:mt-0
-      " id="navbar-sticky">
-        <ul class="flex flex-col p-4 mt-4
-          h-14 justify-between items-center
-          rounded-xl md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+      <div id="menu"
+        class="items-center justify-between hidden mt-3 rounded-md bg-[#333536] h-[210px] w-full md:flex md:w-auto md:order-1 xl:bg-transparent xl:h-auto xl:mt-0 md:bg-transparent md:h-auto md:mt-0 lg:bg-transparent lg:h-auto lg:mt-0 "
+        id="navbar-sticky">
+        <ul
+          class="flex flex-col p-4 mt-4 h-14 justify-between items-center rounded-xl md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
           <li onclick="handleHide()">
             <a href="#home" id="home-menu"
               class="block py-2 pl-3 text-md pr-4 text-gray-400 bg-red-700 rounded md:bg-transparent md:text-white-700 md:p-0 uppercase"
@@ -109,8 +109,8 @@
               class="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-100 md:p-0 uppercase">packages</a>
           </li>
           <li onclick="handleHide()">
-            <a href="#About" id="about-menu"
-              class="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-100 md:p-0 uppercase">About</a>
+            <a href="#faq" id="faq-menu"
+              class="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-100 md:p-0 uppercase">FAQ</a>
           </li>
         </ul>
       </div>
@@ -120,20 +120,10 @@
 
 
 
-  <section id="home" class="bg-[#111213] container mx-auto mt-36
-  md:mt-[100px]
-  xl:mt-[100px]
-  lg:mt-[100px]
-  ">
-    <div class="flex flex-col items-center justify-between mx-5
-    xl:flex-row
-    md:flex-row
-    lg:flex-row
-    ">
+  <section id="home" class="bg-[#111213] container mx-auto mt-36 md:mt-[100px] xl:mt-[100px] lg:mt-[100px]">
+    <div class="flex flex-col items-center justify-between mx-5 xl:flex-row md:flex-row lg:flex-row ">
       <!-- aswin poster -->
-      <div class="w-[200px]
-      md:w-[380px]
-      ">
+      <div class="w-[200px] md:w-[380px]">
         <img src="https://sportylife.in/public/assets/ashwin.png" alt="Aswin Poster" class="w-full xl:w-96">
       </div>
       <!-- cta -->
@@ -141,8 +131,8 @@
         <div class="relative">
           <h1 class="text-6xl font-bold text-white uppercase" style="font-family: 'League Spartan', sans-serif;">
             Redefining
-            <img src="https://sportylife.in/public/assets/blue-line.png" style="width: 50%; margin-top: -15px;"
-              alt="blur line">
+            <!-- <img src="https://sportylife.in/public/assets/blue-line.png" style="width: 50%; margin-top: -15px;" -->
+              <!-- alt="blur line"> -->
           </h1>
           <br>
           <h1 class="text-7xl font-bold text-white uppercase -mt-6" style="font-family: 'League Spartan', sans-serif;">
@@ -150,11 +140,7 @@
         </div>
         <p class="text-white uppercase" style="font-family: 'League Spartan', sans-serif;">Sports education, Nutrition &
           Fitness</p>
-        <div class="flex flex-col items-center gap-4
-        xl:items-start
-        md:items-start
-        lg:items-start
-        ">
+        <div class="flex flex-col items-center gap-4 xl:items-start md:items-start lg:items-start">
           <a href="https://sportylife.in/login">
             <button type="button"
               class="text-white px-10 py-5 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-14 py-2 text-center mr-3 md:mr-0 uppercase text-xl">Join
@@ -163,13 +149,9 @@
           <p class="text-white uppercase" style="font-family: 'League Spartan', sans-serif;">To try our free 7 day trial
             pack</p>
           <p class="text-white" style="font-family: 'League Spartan', sans-serif;">Download our app now!</p>
-          <div class="flex justify-center w-full gap-5
-          xl:justify-start
-          md:justify-start
-          lg:justify-start
-          ">
+          <div class="flex justify-center w-full gap-5 xl:justify-start md:justify-start lg:justify-start">
           </div>
-          <div class="flex gap-1 mx-5 pb-5">
+          <div class="flex gap-1 pb-5">
             <a href="https://play.google.com/store/apps/details?id=com.sporty_life_app">
               <div class="android border flex flex-col items-center rounded-md px-2 py-1">
                 <!-- <span class="text-white font-thin">Android</span> -->
@@ -188,31 +170,30 @@
       </div>
     </div>
     <!-- social link -->
-    <div class="flex gap-1
-      xl:flex-col
-      md:flex-col
-      lg:flex-col
-      ">
+    <div class="flex gap-1 xl:flex-col md:flex-col lg:flex-col">
       <a href="https://www.facebook.com/profile.php?id=100075938597149">
         <div class="p-2 rounded-md h-14 w-14 cursor-pointer transition hover:scale-110">
-          <img src="https://sportylife.in/public/assets/facebook.png" alt="facebbok">
+          <img src="/assets/facebook.png" alt="facebbok">
         </div>
       </a>
       <a href="https://www.youtube.com/@sportylife9675">
         <div class="p-2 rounded-md h-14 w-14 cursor-pointer transition hover:scale-110">
-          <img src="https://sportylife.in/public/assets/Youtube.png" alt="youtube">
+          <img src="/assets/Youtube.png" alt="youtube">
+        </div>
+      </a>
+      <a href="https://www.instagram.com/sportylifeapp/">
+        <div class="p-2 rounded-md h-14 w-14 cursor-pointer transition hover:scale-110">
+          <img src="/assets/instagram.png" alt="instagram">
         </div>
       </a>
       <a href="https://twitter.com/SportyLife01">
         <div class="p-2 rounded-md h-14 w-14 cursor-pointer transition hover:scale-110">
-          <img src="https://sportylife.in/public/assets/twitter.png" alt="twitter">
+          <img src="/assets/twitter.png" alt="twitter">
         </div>
       </a>
     </div>
     </div>
-    <!-- xl:-mt-20
-    md:-mt-20
-    lg:-mt-20 -->
+
     <!-- sports card -->
     <div class="overflow-auto scroll py-5 cursor-move" data-tooltip-target="tooltip-top" data-tooltip-placement="top">
       <div id="tooltip-top" role="tooltip"
@@ -221,59 +202,43 @@
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
       <div class="mx-10 slider">
-        <div class="grid grid-flow-row gap-4 
-      xl:justify-between xl:gap-5 xl:grid-flow-col
-      md:justify-between md:gap-5 md:grid-flow-col
-      lg:justify-between lg:gap-5 lg:grid-flow-col
-      ">
+        <div class="fixed top-0 left-0 w-screen h-screen z-40 rounded-md hidden" id="video-container">
+          <div class="relative flex justify-center items-center bg-[#000000d4] z-10" style="height:100%">
+            <button type="button" class="absolute top-20 right-2 text-white md:top-20 md:right-20"
+              onclick="handleCloseVideo()">X</button>
+            <video autoplay controls loop id="sportVid"
+              class="rounded-md h-full w-full xl:h-2/3 xl:w-2/3 md:h-2/3 md:w-2/3">
+              <source src="/sport.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div
+          class="grid grid-flow-row gap-4 xl:justify-between xl:gap-5 xl:grid-flow-col md:justify-between md:gap-5 md:grid-flow-col lg:justify-between lg:gap-5 lg:grid-flow-col">
           <!-- left arrow icon -->
-          <div id="card1" class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4
-        xl:w-72
-        md:w-72
-        lg:w-72
-        ">
-            <div class="flex flex-col
-          xl:flex-row
-          md:flex-row
-          lg:flex-row
-          ">
+          <div id="card1"
+            class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4 xl:w-72 md:w-72 lg:w-72">
+            <div class="flex flex-col xl:flex-row md:flex-row lg:flex-row">
               <!-- inner card -->
-              <div class="bg-[#3250a4] w-full flex justify-center items-center
-            xl:w-[120px]
-            md:w-[120px]
-            lg:w-[120px]
-            ">
-                <img src="https://sportylife.in/public/assets/badminton.png" class="flex justify-center items-center p-2
-                  
-                  ">
+              <div class="bg-[#3250a4] w-full flex justify-center items-center xl:w-[120px] md:w-[120px] lg:w-[120px]">
+                <img src="https://sportylife.in/public/assets/badminton.png"
+                  class="flex justify-center items-center p-2">
               </div>
               <div>
                 <div class="mx-2">
                   <h1 class="uppercase font-semibold pt-2 text-xl text-center">Badminton</h1>
                   <!-- <p class="text-sm" style="line-height: 14px;">badminton</p> -->
-                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase"
-                    onclick="handleService()">Learn more</button>
+                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase w-full"
+                    onclick="playBadintion()">Learn more</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- second 2 -->
-          <div id="card2" class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4
-        xl:w-72
-        md:w-72
-        lg:w-72
-        ">
-            <div class="flex flex-col
-          xl:flex-row
-          md:flex-row
-          lg:flex-row
-          ">
+          <div id="card2"
+            class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4 xl:w-72 md:w-72 lg:w-72 ">
+            <div class="flex flex-col xl:flex-row md:flex-row lg:flex-row">
               <!-- inner card -->
-              <div class="bg-[#3250a4] w-full flex justify-center items-center
-            xl:w-[120px]
-            md:w-[120px]
-            lg:w-[120px]
-            ">
+              <div class="bg-[#3250a4] w-full flex justify-center items-center xl:w-[120px] md:w-[120px] lg:w-[120px] ">
                 <img src="https://sportylife.in/public/assets/basketball.png"
                   class="flex justify-center items-center p-2">
               </div>
@@ -281,97 +246,65 @@
                 <div class="mx-2">
                   <h1 class="uppercase font-semibold pt-2 text-xl text-center">Basketball</h1>
                   <!-- <p class="text-sm" style="line-height: 14px;">Basketball des.</p> -->
-                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase"
-                    onclick="handleService()">Learn more</button>
+                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase w-full"
+                    onclick="playBaskitball()">Learn more</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- third 3 -->
-          <div id="card3" class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4
-        xl:w-72
-        md:w-72
-        lg:w-72
-        ">
-            <div class="flex flex-col
-          xl:flex-row
-          md:flex-row
-          lg:flex-row
-          ">
+          <div id="card3"
+            class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4 xl:w-72 md:w-72 lg:w-72 ">
+            <div class="flex flex-col xl:flex-row md:flex-row lg:flex-row">
               <!-- inner card -->
-              <div class="bg-[#3250a4] w-full flex justify-center items-center
-            xl:w-[120px]
-            md:w-[120px]
-            lg:w-[120px]
-            ">
+              <div class="bg-[#3250a4] w-full flex justify-center items-center xl:w-[120px] md:w-[120px] lg:w-[120px]">
                 <img src="https://sportylife.in/public/assets/cricket.png" class="flex justify-center items-center p-2">
               </div>
               <div>
                 <div class="mx-2">
                   <h1 class="uppercase font-semibold pt-2 text-xl text-center">cricket</h1>
                   <!-- <p class="text-sm" style="line-height: 14px;">cricket</p> -->
-                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase"
-                    onclick="handleService()">learn more</button>
+                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase w-full"
+                    onclick="playCricket()">learn more</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- card 4 -->
-          <div id="card4" class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4
-        xl:w-72
-        md:w-72
-        lg:w-72
-        ">
-            <div class="flex flex-col
-          xl:flex-row
-          md:flex-row
-          lg:flex-row
-          ">
+          <div id="card4"
+            class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4 xl:w-72 md:w-72 lg:w-72">
+            <div class="flex flex-col xl:flex-row md:flex-row lg:flex-row">
               <!-- inner card -->
-              <div class="bg-[#3250a4] w-full flex justify-center items-center
-            xl:w-[120px]
-            md:w-[120px]
-            lg:w-[120px]
-            ">
+              <div class="bg-[#3250a4] w-full flex justify-center items-center xl:w-[120px] md:w-[120px] lg:w-[120px] ">
                 <img src="https://sportylife.in/public/assets/tennis.png" class="flex justify-center items-center p-2">
               </div>
               <div>
                 <div class="mx-2">
                   <h1 class="uppercase font-semibold pt-2 text-xl text-center">Tennis</h1>
                   <!-- <p class="text-sm" style="line-height: 14px;">Tennis</p> -->
-                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase"
-                    onclick="handleService()">learn more</button>
+                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase w-full"
+                    onclick="playTennis()">learn more</button>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- card 5 -->
-          <div id="card5" class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4
-           xl:w-72
-           md:w-72
-           lg:w-72
-           ">
-            <div class="flex flex-col
-             xl:flex-row
-             md:flex-row
-             lg:flex-row
-             ">
+          <div id="card5"
+            class="w-full rounded-lg bg-white overflow-hidden transition hover:-translate-y-4 xl:w-72 md:w-72 lg:w-72">
+            <div class="flex flex-col h-full xl:flex-row md:flex-row lg:flex-row">
               <!-- inner card -->
-              <div class="bg-[#3250a4] w-full flex justify-center items-center
-               xl:w-[120px]
-               md:w-[120px]
-               lg:w-[120px]
-               ">
+              <div
+                class="bg-[#3250a4] w-full h-full flex justify-center items-center xl:w-[120px] md:w-[120px] lg:w-[120px]">
                 <img src="https://sportylife.in/public/assets/football.png"
-                  class="flex justify-center items-center p-2">
+                  class="flex justify-center items-center p-2 h-full">
               </div>
-              <div>
-                <div class="mx-2">
+              <div class="h-full">
+                <div class="mx-2 h-full">
                   <h1 class="uppercase font-semibold pt-2 text-xl text-center">Football</h1>
                   <!-- <p class="text-sm" style="line-height: 14px;">football</p> -->
-                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase"
-                    onclick="handleService()">learn more</button>
+                  <button class="bg-black text-white rounded-md px-6 py-2 my-2 uppercase w-full"
+                    onclick="playFootball()">learn more</button>
                 </div>
               </div>
             </div>
@@ -391,25 +324,20 @@
     <div class="my-10 flex flex-col items-center" style="font-family: 'League Spartan', sans-serif;">
       <div class="h-1 bg-red-600 w-32 rounded-full"></div>
       <h1 class="text-white  text-6xl font-extrabold uppercase py-5">
-        service</h1>
-      <p class="text-white text-xl text-center
-      
-      ">We provide a wide range of Education service, ranging from Nutrition to
+        services</h1>
+      <p class="text-gray-300 text-xl text-center">We provide a wide range of Education service, ranging from Nutrition
+        to
         Sports
         and Fitness</p>
     </div>
 
     <div class="flex gap-10 flex-wrap justify-center items-start">
-      <div class="max-w-sm bg-white
-      bg-gradient-to-t from-[#111213] to-red-600
-      rounded-lg shadow-md">
+      <div class="max-w-sm bg-white bg-gradient-to-t from-[#111213] to-red-600 rounded-lg shadow-md">
         <img class="rounded-t-lg mx-auto h-48" src="https://sportylife.in/public/assets/taxi-fitness.png" alt="" />
         <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">2D and 3d Fitness
-            curriculum
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Digital Sports Curriculum
           </h5>
-          <p class="mb-3 font-normal text-gray-100">Get your hands on 2D and 3D curriculum in all 5
-            Sports on the Learning Management System (LMS).</p>
+          <p class="mb-3 font-normal text-gray-100">Experience the science of Sports through 2D and 3D animated Videos</p>
         </div>
       </div>
 
@@ -417,51 +345,39 @@
       <div class="max-w-sm bg-white bg-gradient-to-t from-[#111213] to-[#00bf8f] rounded-lg shadow-md">
         <img class="rounded-t-lg mx-auto h-48" src="https://sportylife.in/public/assets/3dyoga.png" alt="yoga" />
         <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Live fitness<br>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Live Fitness Sessions<br>
             sessions
           </h5>
-          <p class="mb-3 font-normal text-gray-100">Catch up on Live and Recorded Fitness Sessions on the SportyLife App
-            on Strength and Conditioning, Dance and Yoga.</p>
+          <p class="mb-3 font-normal text-gray-100">Catch us LIVE for Fitness Classes on the SportyLife app</p>
         </div>
       </div>
       <!-- third -->
-      <div class="max-w-sm bg-white
-      bg-gradient-to-t from-[#111213] to-blue-600
-      rounded-lg shadow-md">
-        <img class="rounded-t-lg mx-auto h-48" src="https://sportylife.in/public/assets/diet.png" alt="yoga" />
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase"> fitness
-            report card <br>(FRC)
-          </h5>
-          <p class="mb-3 font-normal text-gray-100">Trace your fitness journey through an elaborative Fitness Report
-            Card (FRC) calculated based on your Body Mass Index (BMI).</p>
-        </div>
-      </div>
-
-
-      <div class="max-w-sm bg-white
-      bg-gradient-to-t from-[#111213] to-[#B42B51]
-      rounded-lg shadow-md">
+      <div class="max-w-sm bg-white bg-gradient-to-t from-[#111213] to-blue-600 rounded-lg shadow-md">
         <img class="rounded-t-lg mx-auto h-48" src="https://sportylife.in/public/assets/bag.png" alt="yoga" />
         <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Nutrition
-            Guidance
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase"> Nutritional Guidance
           </h5>
-          <p class="mb-3 font-normal text-gray-100">Get Nutitional Guidance from expert nutritionists through guidance
-            calls and video consultations</p>
+          <p class="mb-3 font-normal text-gray-100">Our Professional Nutritionist will guide you with Monthly Lifestyle Assessments and Guidance calls</p>
         </div>
       </div>
 
-      <div class="max-w-sm bg-white 
-      bg-gradient-to-t from-[#111213] to-[#C84B31] rounded-lg shadow-md">
+
+      <div class="max-w-sm bg-white bg-gradient-to-t from-[#111213] to-[#B42B51] rounded-lg shadow-md">
+        <img class="rounded-t-lg mx-auto h-48" src="https://sportylife.in/public/assets/diet.png" alt="yoga" />
+        <div class="p-5">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Fitness Report Card (FRC)
+          </h5>
+          <p class="mb-3 font-normal text-gray-100">Track your Fitness journey with an exhaustive FRC that is accessible monthly</p>
+        </div>
+      </div>
+
+      <div class="max-w-sm bg-white bg-gradient-to-t from-[#111213] to-[#C84B31] rounded-lg shadow-md">
         <img class="rounded-t-lg mx-auto h-48" src="https://sportylife.in/public/assets/support.png" alt="yoga" />
         <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Customer
-            support
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-100 uppercase">Customer Support
           </h5>
-          <p class="mb-3 font-normal text-gray-100">We provide you with the attention that you so deserve.For any
-            queries,get in touch with us at<br>
-            <a href="mailto:support@sportylife.in" class="text-blue-600 font-semibold">support@sportylife.in</a>
+          <p class="mb-3 font-normal text-gray-100">For any queries, reach out to us at <a href="mailto:support@sportylife.in" class="text-blue-600 font-semibold">support@sportylife.in</a> or call us on <a href="tel:08069444044" class="text-blue-600 font-semibold"></a>080 69444044</a> We're here to ensure that you have a seamless experience.<br>
+            
           </p>
         </div>
       </div>
@@ -475,17 +391,15 @@
 
 
 
-  <section class="mx-5
-  xl:container xl:mx-auto
-  lg:container lg:mx-auto
-  md:container md:mx-auto
-  ">
-    <div id="price" class="flex flex-col justify-center items-center py-7">
+  <section class="mx-5 xl:container xl:mx-auto lg:container lg:mx-auto md:container md:mx-auto">
+    <div id="price" class="flex flex-col justify-center items-center py-7"
+      style="font-family: 'League Spartan', sans-serif;">
       <div class="h-1 bg-red-600 w-32"></div>
       <h1 class="text-white text-center text-6xl font-extrabold uppercase py-2">Packages</h1>
+      <p class="text-gray-300 text-xl text-center">Explore our comprehensive health education packages, designed to
+        empower and inform you on important health topics</p>
     </div>
-    <div class="w-full shadow-md
-  ">
+    <div class="w-full shadow-md">
 
       <div class="sm:hidden">
         <!-- <label for="plan" class="text-gray-100">Choose the Best Plan</label> -->
@@ -507,14 +421,13 @@
             </div>
             <div onclick="thirdPlanShow()"
               class="h-12 w-full mt-1 bg-red-500 rounded-md  flex justify-center items-center text-white">
-              Nutrition
-              Plan
+              Exam Wellness
             </div>
           </div>
 
         </div>
       </div>
-      <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 sm:flex"
+      <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 sm:flex h-14"
         id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
         <li class="w-full">
           <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats"
@@ -524,949 +437,1140 @@
         </li>
         <li class="w-full flex">
           <button id="about-tab" data-tabs-target="#about" style="color:#fff" type="button" role="tab"
-            aria-controls="about" aria-selected="true" class="
-          bg-gray-50 w-full h-full text-xl
-          bg-red-500 text-[16px]
-          ">
+            aria-controls="about" aria-selected="true" class="bg-gray-50 w-full h-full text-xl bg-red-500 text-[16px]">
             Sports & Wellness
             Plans
           </button>
         </li>
-        <li class="w-full">
-          <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq"
-            aria-selected="false" style="color:#444"
-            class="inline-block w-full p-4 rounded-tr-lg bg-gray-50 text-[16px]">Nutrition
-            Plan</button>
+        <li class="w-full flex">
+          <button id="faq-tab" data-tabs-target="#faq" style="color:#444" type="button" role="tab" aria-controls="about"
+            aria-selected="false" class="rounded-tr-lg bg-gray-50 w-full h-full text-xl bg-red-500 text-[16px]">
+            Exam Wellness
+          </button>
         </li>
       </ul>
       <div id="fullWidthTabContent" class="border-t border-gray-200">
-        <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" id="stats" role="tabpanel" aria-labelledby="stats-tab">
-          <!-- insdie first div -->
-          <div class="flex flex-wrap gap-4 justify-center rounded-xl
-        xl:justify-between
-        lg:justify-between
-        ">
-            <!-- standred plan -->
-            <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
-              <h5 class="mb-4 text-xl font-medium text-gray-300">3 Months</h5>
-              <div class="flex items-baseline text-gray-100">
-                <span class="text-3xl font-semibold text-gray-100">₹</span>
-                <span class="text-5xl text-gray-100 font-extrabold tracking-tight">1749</span>
-                <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
-              </div>
-              <!-- List -->
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400 ">Dance Fitness (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400 ">Strength and
-                    Conditioning (2 Sessions)
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
-                    (FRC)</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
-                </li>
-              </ul>
-              <button onclick="handleService()" type="button"
-                class="text-red-600 border
-                border-red-600 hover:text-white
-                hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
-            </div>
-
-            <!-- start -->
-
-
-            <!-- standred plan -->
+        
+        <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" id="faq" role="tabpanel">
+          <div class="flex flex-wrap gap-4 justify-center rounded-xl xl:justify-center lg:justify-center ">
+            <!-- exam plan -->
             <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8
-              bg-gradient-to-t from-[#000000] to-[#d5291c]
-              ">
-              <h5 class="mb-4 text-xl font-medium text-white">6 Months</h5>
+            bg-gradient-to-t from-[#000000] to-[#d5291c]
+            ">
+              <h5 class="mb-4 text-xl font-medium text-white">3 Months</h5>
               <div class="flex items-baseline text-gray-100">
                 <span class="text-3xl font-semibold">₹</span>
-                <span class="text-5xl font-extrabold tracking-tight">2999</span>
+                <span class="text-5xl font-extrabold tracking-tight">1499</span>
                 <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
               </div>
               <!-- List -->
               <ul role="list" class="space-y-5 my-7">
                 <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
+                  <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                  <span class="text-base font-semibold leading-tight text-gray-300">6 Live Sessions per week and
+                    Workdout Sessions Library</span>
+                </li>
+
+                <div class="ml-4">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-400">Specific activities/exercises curated to provide relief during exams</span>
+                  </li>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-400">Yoga (3
+                      Sessions)</span>
+                  </li>
+                  <li class="flex space-x-3 mt-1">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-400">Strength and
+                      Conditioning (3 Sessions)
+                    </span>
+                  </li>
+                </div>
+                 <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <title>Check icon</title>
                     <path fill-rule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                       clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Yoga (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100 " fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Dance Fitness (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Strength and
-                    Conditioning (2 Sessions)
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Customized Diet Plan</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Fitness Report Card
-                    (FRC)</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Assessment</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Video Guidance Call</span>
-                </li>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300 ">Monthly Aid </span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
+                    </li>
               </ul>
               <button onclick="handleService()" type="button"
-                class="text-white border
+                class="text-white border border-white hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                Plan</button>
+            </div>
+            
+            <!-- end of exam plan -->
+          </div>
+        </div>
+        <div id="fullWidthTabContent" class="border-t border-gray-200">
+          <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+            <!-- insdie first div -->
+            <div class="flex flex-wrap gap-4 justify-center rounded-xl xl:justify-between lg:justify-between">
+              <!-- standred plan -->
+              <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
+                <h5 class="mb-4 text-xl font-medium text-gray-300">3 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold text-gray-100">₹</span>
+                  <span class="text-5xl text-gray-100 font-extrabold tracking-tight">1749</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300">6 Live Sessions per week and
+                      Workdout Sessions Library</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Strength and
+                        Conditioning (2 Sessions)
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300 ">Monthly Aid </span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
+                    </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-red-600 border border-red-600 hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                  Plan</button>
+              </div>
+
+              <!-- start -->
+
+
+              <!-- standred plan -->
+              <div
+                class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-gradient-to-t from-[#000000] to-[#d5291c]">
+                <h5 class="mb-4 text-xl font-medium text-white">6 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold">₹</span>
+                  <span class="text-5xl font-extrabold tracking-tight">2999</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-200">6 Live Sessions per week and
+                      Workdout Sessions Library</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Yoga (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Dance Fitness (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Strength and
+                        Conditioning (2 Sessions)
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-200 ">Monthly Aid </span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Monthly Video Guidance Call</span>
+                    </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-white border
                 border-white hover:text-white
                 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
-            </div>
-            <!-- end 2nd price of lifestyle -->
-
-            <!-- start 3 price of lifestyle -->
-
-            <!-- standred plan -->
-            <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
-              <h5 class="mb-4 text-xl font-medium text-gray-300">12 Months</h5>
-              <div class="flex items-baseline text-gray-100">
-                <span class="text-3xl font-semibold text-gray-100">₹</span>
-                <span class="text-5xl font-extrabold tracking-tight text-gray-100">5499</span>
-                <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                  Plan</button>
               </div>
-              <!-- List -->
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+              <!-- end 2nd price of lifestyle -->
+
+              <!-- start 3 price of lifestyle -->
+
+              <!-- standred plan -->
+              <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
+                <h5 class="mb-4 text-xl font-medium text-gray-300">12 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold text-gray-100">₹</span>
+                  <span class="text-5xl font-extrabold tracking-tight text-gray-100">5499</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <title>Check icon</title>
                     <path fill-rule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                       clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300">6 Live Sessions per week and
+                      Workdout Sessions Library</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Strength and
+                        Conditioning (2 Sessions)
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <title>Check icon</title>
                     <path fill-rule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                       clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Strength and
-                    Conditioning (2 Sessions)
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
-                    (FRC)</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
-                </li>
-              </ul>
-              <button onclick="handleService()" type="button"
-                class="text-red-500 border
-                border-red-600 hover:text-white
-                hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300 ">Monthly Aid </span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
+                    </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-red-500 border border-red-600 hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                  Plan</button>
+              </div>
             </div>
+
+            <!-- end of first div -->
           </div>
 
-          <!-- end of first div -->
-        </div>
+          <!-- second section -->
+          <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" id="about" role="tabpanel" aria-labelledby="about-tab">
 
-        <!-- second section -->
-        <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" id="about" role="tabpanel" aria-labelledby="about-tab">
-
-          <!-- inside second div -->
-          <div class="flex flex-wrap gap-4 justify-center rounded-xl
-        xl:justify-between
-        lg:justify-between
-        ">
-            <!-- standred plan -->
-            <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
-              <h5 class="mb-4 text-xl font-medium text-gray-100">3 Months</h5>
-              <div class="flex items-baseline text-gray-100">
-                <span class="text-3xl font-semibold">₹</span>
-                <span class="text-5xl font-extrabold tracking-tight">2249</span>
-                <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+            <!-- inside second div -->
+            <div class="flex flex-wrap gap-4 justify-center rounded-xl xl:justify-between lg:justify-between">
+              <!-- standred plan -->
+              <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
+                <h5 class="mb-4 text-xl font-medium text-gray-100">3 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold">₹</span>
+                  <span class="text-5xl font-extrabold tracking-tight">1999</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300">Digital Sports Curriculum</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Structured Learning Mangarment
+                        System</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Topics Covered: The basics,
+                        Etiquettes, Sportsmanship and the untold rules of the game.
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300">6 Live Sessions per week and
+                      Workdout Sessions Library</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Strength and
+                        Conditioning (2 Sessions)
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300 ">Monthly Aid</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
+                    </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-red-600 border border-red-600 hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                  Plan</button>
               </div>
-              <!-- List -->
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Learning Management
-                    System (LMS)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Digital Coaching from
-                    the Basics</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Etiquettes,
-                    Sportsmanship and untold rules of the game
-                  </span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Strength and
-                    Conditioning (2 Sessions)
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
-                    (FRC)</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Complimentary Service: on-ground
-                    training
-                    will be provided in collaboration with Schools.Our Sports Curriculum will be implemented as a part
-                    of
-                    the P.E classes and will be subjected to availability of infrastucture in Schools.</span>
-                </li>
-              </ul>
-              <button onclick="handleService()" type="button"
-                class="text-red-600 border
-                border-red-600 hover:text-white
-                hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
-            </div>
 
 
-            <!-- standred plan -->
-            <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8
+              <!-- standred plan -->
+              <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8
               bg-gradient-to-t from-[#000000] to-[#d5291c]
               ">
-              <h5 class="mb-4 text-xl font-medium text-white">6 Months</h5>
-              <div class="flex items-baseline text-gray-100">
-                <span class="text-3xl font-semibold">₹</span>
-                <span class="text-5xl font-extrabold tracking-tight">3999</span>
-                <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                <h5 class="mb-4 text-xl font-medium text-white">6 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold">₹</span>
+                  <span class="text-5xl font-extrabold tracking-tight">3499</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-200">Digital Sports Curriculum</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Structured Learning Mangarment
+                        System</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Topics Covered: The basics,
+                        Etiquettes, Sportsmanship and the untold rules of the game.
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-200">6 Live Sessions per week and
+                      Workdout Sessions Library</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Yoga (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Dance Fitness (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Strength and
+                        Conditioning (2 Sessions)
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-200 ">Monthly Aid</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-300">Monthly Video Guidance Call</span>
+                    </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-white border border-white hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                  Plan</button>
               </div>
-              <!-- List -->
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200 ">Learning Management
-                    System (LMS)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Digital Coaching from
-                    the Basics</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Etiquettes,
-                    Sportsmanship and untold rules of the game
-                  </span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Yoga (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100 " fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Dance Fitness (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Strength and
-                    Conditioning (2 Sessions)
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Customized Diet Plan</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Fitness Report Card
-                    (FRC)</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Assessment</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Video Guidance Call</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Complimentary Service: on-ground
-                    training
-                    will be provided in collaboration with Schools.Our Sports Curriculum will be implemented as a part
-                    of
-                    the P.E classes and will be subjected to availability of infrastucture in Schools.</span>
-                </li>
-              </ul>
-              <button onclick="handleService()" type="button"
-                class="text-white border
-                border-white hover:text-white
-                hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
-            </div>
-            <!-- end 2nd price of lifestyle -->
+              <!-- end 2nd price of lifestyle -->
 
-            <!-- start 3 price of lifestyle -->
+              <!-- start 3 price of lifestyle -->
 
-            <!-- standred plan -->
-            <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
-              <h5 class="mb-4 text-xl font-medium text-gray-100">12 Months</h5>
-              <div class="flex items-baseline text-gray-100">
-                <span class="text-3xl font-semibold">₹</span>
-                <span class="text-5xl font-extrabold tracking-tight">6999</span>
-                <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+              <!-- standred plan -->
+              <div class="w-full max-w-sm p-4 bg-white rounded-lg shadow-md sm:p-8 bg-transparent">
+                <h5 class="mb-4 text-xl font-medium text-gray-100">12 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold">₹</span>
+                  <span class="text-5xl font-extrabold tracking-tight">5999</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300">Digital Sports Curriculum</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Structured Learning Mangarment
+                        System</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Topics Covered: The basics,
+                        Etiquettes, Sportsmanship and the untold rules of the game.
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300">6 Live Sessions per week and
+                      Workdout Sessions Library</span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
+                        Sessions)</span>
+                    </li>
+                    <li class="flex space-x-3 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Strength and
+                        Conditioning (2 Sessions)
+                      </span>
+                    </li>
+                  </div>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <!-- <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Check icon</title>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg> -->
+                    <img src="/assets/arrow-right.png" alt="arrow-right" class="w-5 h-5 rounded-full p-1 bg-gray-200">
+                    <span class="text-base font-semibold leading-tight text-gray-300 ">Monthly Aid </span>
+                  </li>
+                  <div class="ml-4">
+                    <li class="flex space-x-3 decoration-gray-500">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
+                        (FRC)</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
+                    </li>
+                    <li class="flex space-x-3 decoration-gray-500 mt-1">
+                      <!-- Icon -->
+                      <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Check icon</title>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
+                    </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-red-500 border border-red-600 hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                  Plan</button>
               </div>
-              <!-- List -->
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Learning Management
-                    System (LMS)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Digital Coaching from
-                    the Basics</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Etiquettes,
-                    Sportsmanship and untold rules of the game
-                  </span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Yoga (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Dance Fitness (2
-                    Sessions)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Strength and
-                    Conditioning (2 Sessions)
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Customized Diet Plan</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Fitness Report Card
-                    (FRC)</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Assessment</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.41 4l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Monthly Video Guidance Call</span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-red-400" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-400">Complimentary Service: on-ground
-                    training
-                    will be provided in collaboration with Schools.Our Sports Curriculum will be implemented as a part
-                    of
-                    the P.E classes and will be subjected to availability of infrastucture in Schools.</span>
-                </li>
-              </ul>
-              <button onclick="handleService()" type="button"
-                class="text-red-500 border
-                border-red-600 hover:text-white
-                hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
             </div>
+
+
+            <!-- upper is second div -->
           </div>
 
 
-          <!-- upper is second div -->
-        </div>
 
 
-
-
-        <!-- third section -->
-        <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" id="faq" role="tabpanel" aria-labelledby="faq-tab">
-          <!-- insdie third div -->
-          <div class="flex flex-wrap gap-4 justify-center rounded-xl
-        xl:justify-between
-        lg:justify-between
-        ">
-            <!-- standred plan -->
-            <div class="w-full max-w-sm p-4 rounded-lg shadow-md sm:p-8 
-          bg-gradient-to-t from-[#000000] to-[#d5291c]
-          mx-auto ">
-              <h5 class="mb-4 text-xl font-medium text-gray-100">6 Months</h5>
-              <div class="flex items-baseline text-gray-100">
-                <span class="text-3xl font-semibold">₹</span>
-                <span class="text-5xl font-extrabold tracking-tight">2499</span>
-                <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+          <!-- third section -->
+          <div class="hidden p-4 bg-[#111213] rounded-lg md:p-8" role="tabpanel">
+            <!-- insdie third div -->
+            <div class="flex flex-wrap gap-4 justify-center rounded-xl xl:justify-between lg:justify-between">
+              <!-- standred plan -->
+              <div
+                class="w-full max-w-sm p-4 rounded-lg shadow-md sm:p-8  bg-gradient-to-t from-[#000000] to-[#d5291c] mx-auto">
+                <h5 class="mb-4 text-xl font-medium text-gray-100">6 Months</h5>
+                <div class="flex items-baseline text-gray-100">
+                  <span class="text-3xl font-semibold">₹</span>
+                  <span class="text-5xl font-extrabold tracking-tight">2499</span>
+                  <!-- <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400"> 3 month</span> -->
+                </div>
+                <!-- List -->
+                <ul role="list" class="space-y-5 my-7">
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-200">Customised Diet
+                      Plan</span>
+                  </li>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-200">Monthly Fitness
+                      Report Card (FRC)</span>
+                  </li>
+                  <li class="flex space-x-3">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-200">Monthly Assessment
+                    </span>
+                  </li>
+                  <li class="flex space-x-3 decoration-gray-500">
+                    <!-- Icon -->
+                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <title>Check icon</title>
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base font-normal leading-tight text-gray-200">Monthly Video Guidance Call</span>
+                  </li>
+                </ul>
+                <button onclick="handleService()" type="button"
+                  class="text-white border border-white hover:text-white hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
+                  Plan</button>
               </div>
-              <!-- List -->
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Customised Diet
-                    Plan</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Fitness
-                    Report Card (FRC)</span>
-                </li>
-                <li class="flex space-x-3">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Assessment
-                  </span>
-                </li>
-                <li class="flex space-x-3 decoration-gray-500">
-                  <!-- Icon -->
-                  <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-gray-100" fill="currentColor"
-                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Check icon</title>
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-200">Monthly Video Guidance Call</span>
-                </li>
-              </ul>
-              <button onclick="handleService()" type="button"
-                class="text-red-600 border
-                border-red-600 hover:text-white
-                hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-xl text-sm px-5 py-4 inline-flex justify-center w-full text-center uppercase">Buy
-                Plan</button>
             </div>
-
-
           </div>
+          <!-- upper in this third div -->
         </div>
-        <!-- upper in this third div -->
       </div>
     </div>
-    </div>
-
   </section>
 
-  <!-- end of http price -->
 
 
 
-
-
-
-
-  <!-- about -->
-  <section id="About" class="py-8 mx-5
-  xl:container xl:mx-auto
-  md:container md:mx-auto
-  lg:container lg:mx-auto
-  ">
+  <!-- faq -->
+  <section id="faq" class="py-8 mx-5 xl:container xl:mx-auto md:container md:mx-auto lg:container lg:mx-auto">
     <div class="flex flex-col justify-center items-center py-5">
       <div class="h-1 bg-red-600 w-32 rounded-full"></div>
-      <h1 class="text-white text-center text-6xl font-extrabold uppercase py-2">about</h1>
+      <h1 class="text-white text-center text-6xl font-extrabold uppercase py-2">FAQ</h1>
     </div>
 
     <div id="accordion-open" data-accordion="open">
-      <!-- <h2 id="accordion-open-heading-1">
-        <button type="button"
-          class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-700"
-          data-accordion-target="#accordion-open-body-1" aria-expanded="true" aria-controls="accordion-open-body-1">
-          <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                clip-rule="evenodd"></path>
-            </svg> What is Sportylife?</span>
-          <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-      </h2>
-      <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
-        <div class="p-5 font-light border border-b-0 border-gray-200">
-          <p class="mb-2 text-gray-500"> Mission Sports Private Limited is a 10 years 7 months old
-            Private Company incorporated on 22 May 2012. Its registered office is in Bangalore, Karnataka, india. The
-            Company's status is Active, and it has filed its Annual Returns and Financial Statements up to 31 Mar 2021
-            (FY 2020-2021).
-          </p>
-        </div>
-      </div> -->
       <h2 id="accordion-open-heading-2">
         <button id="accordion-open-heading-2" type="button"
           class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-700"
@@ -1476,7 +1580,7 @@
               <path fill-rule="evenodd"
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                 clip-rule="evenodd"></path>
-            </svg>Can i have a nutrition consultation at my convenience ?</span>
+            </svg>What is SportyLife ? </span>
           <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -1487,9 +1591,11 @@
       </h2>
       <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
         <div class="p-5 font-light border border-b-0 border-gray-200">
-          <p class="mb-2 text-gray-500 ">At SportyLife, you will be provided with a monthly guidance
-            call and quarterly nutritional video consultation by our expert nutritionists and they will get back to you
-            within 48 working hours.</p>
+          <p class="mb-2 text-gray-500 ">SportyLife is a comprehensive sports education platform that offers
+            instructional-based sports
+            curriculum to children. The curriculum is also integrated with nutrition, fitness, and sports education
+            to help students develop their sports skills and enrich their learning experience. Our mission is to
+            create a healthier and happier future generation through sports education.</p>
         </div>
       </div>
       <h2 id="accordion-open-heading-3">
@@ -1501,7 +1607,8 @@
               <path fill-rule="evenodd"
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                 clip-rule="evenodd"></path>
-            </svg> How does Fitness Report Card work ?</span>
+            </svg>What does SportyLife offer ?
+          </span>
           <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -1512,9 +1619,10 @@
       </h2>
       <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
         <div class="p-5 font-light border border-t-0 border-gray-200">
-          <p class="mb-2 text-gray-500 ">The Fitness Report Card is a new and unique concept that we
-            provide with regards to the data entered by you to check the Ideal Body Weight and Body Mass Index and track
-            water and calorie intake.</p>
+          <p class="mb-2 text-gray-500 ">SportyLife offers a wide range of services, including sports curriculum,
+            fitness classes, and
+            nutritional guidance. Our curriculum covers the science behind sports, physiological and
+            psychological benefits, technical and tactical coaching, and much more.</p>
         </div>
       </div>
 
@@ -1527,7 +1635,7 @@
               <path fill-rule="evenodd"
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                 clip-rule="evenodd"></path>
-            </svg> Why should i choose Nutrition at Sportylife ?</span>
+            </svg>How is SportyLife delivered to end-users ?</span>
           <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -1555,7 +1663,8 @@
               <path fill-rule="evenodd"
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                 clip-rule="evenodd"></path>
-            </svg> Why do i need BMI ?</span>
+            </svg>Is the sports curriculum only for children who are already athletes ?
+          </span>
           <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -1566,7 +1675,63 @@
       </h2>
       <div id="accordion-open-body-5" class="hidden" aria-labelledby="accordion-open-heading-3">
         <div class="p-5 font-light border border-t-0 border-gray-200">
-          <p class="mb-2 text-gray-500">Your BMI (Body Mass Index) is one of the parameters to analyse the nutritional requirements of a person. It is an indispensable primary step. The information on BMI helps our nutritionists to plan diet charts that assist our users with their nutritional goals.</p>
+          <p class="mb-2 text-gray-500">No, the sports curriculum is designed for children of all abilities. Whether
+            your child is just starting
+            out in sports or is already an experienced athlete, our curriculum is designed to cater to their needs
+            and help them develop their skills and knowledge.</p>
+        </div>
+      </div>
+      <h2 id="accordion-open-heading-6">
+        <button type="button"
+          class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-700 "
+          data-accordion-target="#accordion-open-body-6" aria-expanded="false" aria-controls="accordion-open-body-5">
+          <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                clip-rule="evenodd"></path>
+            </svg>Who will be providing the nutrition guidance ?
+          </span>
+          <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </h2>
+      <div id="accordion-open-body-6" class="hidden" aria-labelledby="accordion-open-heading-3">
+        <div class="p-5 font-light border border-t-0 border-gray-200">
+          <p class="mb-2 text-gray-500">Our nutrition guidance is provided by our team of professional nutritionists who
+            have a deep
+            understanding of the nutrition needs of the Human Body.</p>
+        </div>
+      </div>
+      <h2 id="accordion-open-heading-7">
+        <button type="button"
+          class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-700 "
+          data-accordion-target="#accordion-open-body-7" aria-expanded="false" aria-controls="accordion-open-body-5">
+          <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                clip-rule="evenodd"></path>
+            </svg>What is the purpose of the nutritional guidance calls and How often are the calls held ?
+          </span>
+          <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </h2>
+      <div id="accordion-open-body-7" class="hidden" aria-labelledby="accordion-open-heading-3">
+        <div class="p-5 font-light border border-t-0 border-gray-200">
+          <p class="mb-2 text-gray-500">The purpose of the nutritional guidance calls is to provide personalized
+            guidance and advice on
+            healthy eating habits and nutrition to support an active lifestyle. The frequency of the calls is once a
+            once a month.</p>
         </div>
       </div>
     </div>
@@ -1574,24 +1739,55 @@
 
   <!-- footer -->
 
-  <footer class="p-4 md:px-6 md:py-8 bg-gradient-to-t from-[#000000] to-[#d5291c] mt-10">
+  <footer class="p-4 md:px-6 md:py-8 bg-[#1a2d5a] mt-10">
     <div class="sm:flex sm:items-center sm:justify-between">
-      <a href="/" class="flex items-center mb-4 sm:mb-0">
-        <img src="https://sportylife.in/public/web/assets/img/logo-updated3.png" class="h-16 mr-3"
-          alt="Sportylife Logo">
-      </a>
-      <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-300 sm:mb-0 ">
+      <div class="w-full mb-3 md:w-1/3 xl:w-1/3 lg:w-1/2 md:mb-0 xl:mb-0 lg:mb-0">
+        <p class="text-gray-200">SportyLife is a product offered by Mission Sports Pvt Ltd, registered under the Companies Act 1956.</p>
+        <a href="/" class="flex items-center mb-2 sm:mb-0">
+          <img src="/assets/mslogo.png" class="h-32 w-44"
+            alt="Sportylife Logo">
+        </a>
+        <address class="text-gray-300 text-sm">
+          <span class="underline text-lg"> Corporate Office</span><br>
+          <span class="font-bold not-italic">Mission Sports Private Limited</span> <br>
+          #480, Enzyme Tech Park, 1st & 3rd Floor, <br>
+          27th Main Road, 18th Cross Road, <br>
+          HSR Layout, Bengaluru, Karnataka 560102
+        </address>
+      </div>
+      <ul class="flex flex-wrap items-start gap-2 mb-6 text-sm text-gray-300 sm:mb-0 flex-col">
+        <h5 class="font-bold text-xl">Site Map</h5>
         <li>
           <a href="#home" class="mr-4 hover:underline md:mr-6 ">Home</a>
         </li>
         <li>
-          <a href="#serivces" class="mr-4 hover:underline md:mr-6">Service</a>
+          <a href="#serivces" class="mr-4 hover:underline md:mr-6">Services</a>
         </li>
         <li>
           <a href="#price" class="mr-4 hover:underline md:mr-6 ">Packages</a>
         </li>
         <li>
-          <a href="#About" class="mr-4 hover:underline md:mr-6 ">About</a>
+          <a href="#faq" class="mr-4 hover:underline md:mr-6 ">FAQ</a>
+        </li>
+        <!-- <li>
+          <a href="#" class="hover:underline">Contact</a>
+        </li> -->
+      </ul>
+      <ul class="flex flex-wrap items-start gap-2 justify-center mb-6 text-sm text-gray-300 sm:mb-0 flex-col">
+        <h5 class="font-bold text-xl">Policies</h5>
+        <li>
+          <a href="https://sportylife.in/terms-conditions" class="mr-4 hover:underline md:mr-6">Terms of Services</a>
+        </li>
+        <li>
+          <a href="https://sportylife.in/privacy-policy" class="mr-4 hover:underline md:mr-6 ">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="https://sportylife.in/refund-cancellation" class="mr-4 hover:underline md:mr-6 ">Refund and
+            Cancellation Policy</a>
+        </li>
+        <li>
+          <a href="https://sportylife.in/shipping-delivery" class="mr-4 hover:underline md:mr-6 ">Shipping and Delivery
+            Policy</a>
         </li>
         <!-- <li>
           <a href="#" class="hover:underline">Contact</a>
@@ -1599,11 +1795,48 @@
       </ul>
     </div>
     <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-500 text-center sm:text-center text-gray-300">© 2023 <a href="/"
-        class="hover:underline">SportyLife.in</a>. All Rights Reserved.
+    <span class="block text-sm text-gray-500 text-center sm:text-center text-gray-300">© <span id="date"></span> <a
+        href="/" class="hover:underline">SportyLife.in</a>. All Rights Reserved.
     </span>
   </footer>
   <script>
+
+
+      // video
+    let div = document.getElementById('video-container');
+    let video = document.getElementById('sportVid');
+    video.pause()  
+    const playBadintion = () => {
+      div.classList.remove('hidden')
+      video.currentTime = 0
+      video.play()
+    }
+    const playBaskitball = () => {
+      div.classList.remove('hidden')
+      video.currentTime = 20
+      video.play()
+    }
+    const playCricket = () => {
+      div.classList.remove('hidden')
+      video.currentTime = 40
+      video.play()
+    }
+    const playTennis = () => {
+      div.classList.remove('hidden')
+      video.currentTime = 60
+      video.play()
+    }
+    const playFootball = () => {
+      div.classList.remove('hidden')
+      video.currentTime = 80
+      video.play()
+    }
+    const handleCloseVideo = () => {
+      div.classList.add('hidden')
+      video.pause()
+    }
+
+
     const mobile_icon = document.getElementById('mobile-icon');
     const mobile_menu = document.getElementById('mobile-menu');
     const hamburger_icon = document.querySelector("#mobile-icon i");
@@ -1672,7 +1905,7 @@
       menu.classList.toggle('hidden')
     }
 
-    const about = document.getElementById('about-menu')
+    const fqa = document.getElementById('faq-menu')
     const price = document.getElementById('price-menu')
     const home = document.getElementById('home-menu')
     const service = document.getElementById('service-menu')
@@ -1685,8 +1918,8 @@
       home.style.fontSize = "15px"
       price.style.color = "#81868f"
       price.style.fontSize = "15px"
-      about.style.color = "#81868f"
-      about.style.fontSize = "15px"
+      fqa.style.color = "#81868f"
+      fqa.style.fontSize = "15px"
     })
 
     // home
@@ -1697,8 +1930,8 @@
       service.style.fontSize = "15px"
       price.style.color = "#81868f"
       price.style.fontSize = "15px"
-      about.style.color = "#81868f"
-      about.style.fontSize = "15px"
+      fqa.style.color = "#81868f"
+      fqa.style.fontSize = "15px"
     })
 
     // price
@@ -1709,14 +1942,14 @@
       service.style.fontSize = "15px"
       home.style.color = "#81868f"
       home.style.fontSize = "15px"
-      about.style.color = "#81868f"
-      about.style.fontSize = "15px"
+      fqa.style.color = "#81868f"
+      fqa.style.fontSize = "15px"
     })
 
     // about
     about.addEventListener('click', () => {
-      about.style.color = "#fff"
-      about.style.fontSize = "20px"
+      fqa.style.color = "#fff"
+      fqa.style.fontSize = "20px"
       service.style.color = "#81868f"
       service.style.fontSize = "15px"
       price.style.color = "#81868f"
@@ -1738,8 +1971,6 @@
       const menu = document.getElementById('plan-menu')
       menu.classList.toggle('hidden')
     }
-
-
 
     const firstPlanShow = () => {
       let placeHolder = document.getElementById('showPlanName')
@@ -1774,9 +2005,6 @@
       stats.classList.add('hidden')
       handleChoosePlan()
     }
-
-
-
   </script>
 </body>
 
